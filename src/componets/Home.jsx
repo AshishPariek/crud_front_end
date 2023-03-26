@@ -26,7 +26,6 @@ const Home = () => {
         .catch((err) => {
           alert(err);
         });
-      // setTimeout(() => fetcher(), 500);
     }
   };
 
