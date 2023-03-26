@@ -1,38 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
-  text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navContainer {
+  height: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #1789;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  height: 94vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.styledTable {
+  border-collapse: collapse;
+  font-size: 1rem;
+  font-family: sans-serif;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+}
+.styledTable thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.styledTable th,
+.styledTable td {
+  padding: 12px 15px;
+}
+.styledTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.styledTable tbody tr:nth-last-of-type(even) {
+  background-color: #f3f3f3;
+}
+.styledTable tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.btn {
+  border: none;
   color: white;
+  padding: 5px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-Edit {
+  background-color: #008cba;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-Update {
+  background: #f44336;
+}
+.btn-View {
+  background-color: #e7e7e7;
+  color: black;
+}
+.btn-contact {
+  background-color: green;
+  margin-bottom: 10px;
+}
+.formStyle {
+  width: 25%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  border: 1px solid green;
+  border-top: 4rem solid green;
+}
+.formStyle input {
+  border-radius: 4px;
+  border: 1px solid #dfdfdf;
+  padding: 8px 6px;
 }
