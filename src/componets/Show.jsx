@@ -21,25 +21,21 @@ const Show = () => {
     fetcher();
   }, []);
 
-  return (
-    <div className="container showItem">
-      <div className="card">
-        <div className="cardHeader">
-          <p>Contact Details</p>
-        </div>
+  if (isFetched) {
+    return <h1>Loading...</h1>;
+  } else {
+    return (
+      <div className="container showItem">
         <div className="detailContainer">
+          <h2>Contact Details</h2>
           <strong>ID : {id}</strong>
-          <br />
           <strong>Name : {item.name}</strong>
-          <br />
           <strong>Email : {item.email}</strong>
-          <br />
           <strong>Contacts : {item.contact}</strong>
-          <br />
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Show;

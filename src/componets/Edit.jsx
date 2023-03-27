@@ -5,8 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const Edit = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  // const [isDataFetched, setIsFetched] = useState(false);
-  const [fetching, setFetching] = useState(false);
+  const [fetching, setFetching] = useState(true);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -44,46 +43,53 @@ const Edit = () => {
   };
 
   if (fetching) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="container addCon">
+        <div className="formStyle">
+          <h1>Loadind...</h1>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="container addCon">
+        <form className="editFormStyle">
+          <div className="detailsHeader">Edit Contact</div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            value={values.name}
+            placeholder="Name..."
+            onChange={changeHandler}
+          ></input>
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            value={values.email}
+            placeholder="Email..."
+            onChange={changeHandler}
+          ></input>
+          <label htmlFor="contact">Contact</label>
+          <input
+            type="text"
+            name="contact"
+            value={values.contact}
+            placeholder="Contact..."
+            onChange={changeHandler}
+          ></input>
+          <button
+            onClick={sumbitBtnHandler}
+            style={{ backgroundColor: "#008cba" }}
+            className="btn"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    );
   }
-  return (
-    <div className="container addCon">
-      <form className="formStyle">
-        <div className="detailsHeader">Edit Contact</div>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          value={values.name}
-          placeholder="Name..."
-          onChange={changeHandler}
-        ></input>
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          name="email"
-          value={values.email}
-          placeholder="Email..."
-          onChange={changeHandler}
-        ></input>
-        <label htmlFor="contact">Contact</label>
-        <input
-          type="text"
-          name="contact"
-          value={values.contact}
-          placeholder="Contact..."
-          onChange={changeHandler}
-        ></input>
-        <button
-          onClick={sumbitBtnHandler}
-          style={{ backgroundColor: "green" }}
-          className="btn"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
-  );
 };
 
 export default Edit;

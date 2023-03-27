@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Add = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Add = () => {
         .catch((err) => {
           alert(err);
         });
-      // toast.success("Added Successfully");
+      toast.success("Added Successfully");
       navigate("/");
     }
   };
